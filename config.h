@@ -2,21 +2,49 @@
 
 #include <X11/XF86keysym.h>
 
+/* dracula standard colors */
+#define dracula_std_background "#282A36"
+#define dracula_std_foreground "#F8F8F2"
+#define dracula_std_selection  "#44475A"
+#define dracula_std_comment    "#6272A4"
+#define dracula_std_red        "#FF5555"
+#define dracula_std_orange     "#FFB86C"
+#define dracula_std_yellow     "#F1FA8C"
+#define dracula_std_green      "#50FA7B"
+#define dracula_std_purple     "#BD93F9"
+#define dracula_std_cyan       "#8BE9FD"
+#define dracula_std_pink       "#FF79C6"
+
+/* dracula ansi colors */
+#define dracula_ansi_black   "#21222C"
+#define dracula_ansi_red     "#FF5555"
+#define dracula_ansi_green   "#50FA7B"
+#define dracula_ansi_yellow  "#F1FA8C"
+#define dracula_ansi_blue    "#BD93F9"
+#define dracula_ansi_magenta "#FF79C6"
+#define dracula_ansi_cyan    "#8BE9FD"
+#define dracula_ansi_white   "#F8F8F2"
+
+/* dracula ansi bright colors */
+#define dracula_ansi_bright_black   "#6272A4"
+#define dracula_ansi_bright_red     "#FF6E6E"
+#define dracula_ansi_bright_green   "#69FF94"
+#define dracula_ansi_bright_yellow  "#FFFFA5"
+#define dracula_ansi_bright_blue    "#D6ACFF"
+#define dracula_ansi_bright_magenta "#FF92DF"
+#define dracula_ansi_bright_cyan    "#A4FFFF"
+#define dracula_ansi_bright_white   "#FFFFFF"
+
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const char *fonts[]          = { "Input:antialias=true:autohint=true:size=9" };
-static const char col_gray1[]       = "#222222";
-static const char col_gray2[]       = "#444444";
-static const char col_gray3[]       = "#bbbbbb";
-static const char col_gray4[]       = "#eeeeee";
-static const char col_cyan[]        = "#005577";
 static const char *colors[][3]      = {
-    /*               fg         bg         border   */
-    [SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
-    [SchemeSel]  = { col_gray4, col_cyan,  col_cyan  },
+    /*               fg                      bg                      border */
+    [SchemeNorm] = { dracula_std_comment,    dracula_std_background, dracula_std_comment },
+    [SchemeSel]  = { dracula_std_foreground, dracula_std_selection,  dracula_std_pink },
 };
 
 /* tagging */
