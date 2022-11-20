@@ -94,6 +94,11 @@ static const char *volumeUp5[]        = { "amixer", "set", "Master", "5%+", NULL
 static const char *volumeDown5[]      = { "amixer", "set", "Master", "5%-", NULL };
 static const char *volumeMuteToggle[] = { "amixer", "set", "Master", "toggle", NULL };
 
+/* screen capture */
+static const char *scrotFullscreen[]  = { "scrot", "--silent", NULL };
+static const char *scrotFocusedW[]    = { "scrot", "--silent", "--ignorekeyboard", "--focused", NULL };
+static const char *scrotSelect[]      = { "scrot", "--silent", "--ignorekeyboard", "--select", NULL };
+
 static const Key keys[] = {
     /* modifier           key                      function        argument */
     { MODKEY,             XK_p,                    spawn,          { .v = dmenucmd } },
@@ -125,6 +130,9 @@ static const Key keys[] = {
     { 0,                  XF86XK_AudioRaiseVolume, spawn,          { .v = volumeUp5 } },
     { 0,                  XF86XK_AudioLowerVolume, spawn,          { .v = volumeDown5 } },
     { 0,                  XF86XK_AudioMute,        spawn,          { .v = volumeMuteToggle } },
+    { 0,                  XK_Print,                spawn,          { .v = scrotFullscreen } },
+    { ShiftMask,          XK_Print,                spawn,          { .v = scrotFocusedW } },
+    { ControlMask,        XK_Print,                spawn,          { .v = scrotSelect } },
     TAGKEYS(              XK_1,                                    0)
     TAGKEYS(              XK_2,                                    1)
     TAGKEYS(              XK_3,                                    2)
